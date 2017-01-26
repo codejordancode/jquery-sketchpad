@@ -1,0 +1,1 @@
+function makeGrid(){for(var i=0;gridSize*gridSize>i;i++)$("#sketch_container").append("<div class='gridUnit'></div>");unitSize=500/gridSize,$(".gridUnit").css({width:unitSize,height:unitSize})}var gridSize=4,unitSize=0;$(document).ready(function(){makeGrid()});
