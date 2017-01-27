@@ -7,4 +7,6 @@
 }
 .gridUnit {
 	display: inline-block;
+	background-color: black;
+	opacity: 0;
 }
