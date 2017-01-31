@@ -1,7 +1,5 @@
-var gridLength = 25; // between 1-100 works best
-
 // creates a dynamically sized grid based on user input
-function makeGrid() {
+function makeGrid(gridLength) {
 	// adds a div with the class gridUnit if i is less than gridUnit, increments i, and reevaluates
 	for(var i = 0; i < gridLength * gridLength; i++) {
 		$("#sketch_container").append("<div class='gridUnit'></div>");
@@ -12,7 +10,8 @@ function makeGrid() {
 	$(".gridUnit").css({
 		"width": unitSize,
 		"height": unitSize,
-		"display": "inline-block",
+		"opacity": "0",
+		"background-color": "black"
 	});
 }
 
@@ -26,7 +25,7 @@ function pen() {
 	});
 }
 
-// creates the crayon() effect when the button is clicked
+// creates the crayon() effect when the corresponding button is clicked
 function crayon() {
 	// selects random RGB color for crayon effect
 	function getRandomColor() {
@@ -63,11 +62,16 @@ function clear_grid() {
 
 // sets the gridLength equal to user input
 function selectSize() {
-	$().event(); 
+	var userSize = prompt("Enter the number of squares per side; 10-100 works best.");
+	while(isNaN(userSize) === true) {
+		userSize = prompt("Please enter a number for the grid size");
+	}
+	makeGrid(userSize);
+	pen();
 }
 
 // calls the makeGrid() and pen functions once the document is loaded
 $(document).ready(function() {
-		makeGrid();
+		makeGrid(16);
 		pen();
 });
