@@ -3,15 +3,12 @@
 	<meta charset="UTF-8" />
 	<title>jQuery Sketchpad</title>
 	<link href="style.css" rel="stylesheet" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="sketchpad.js" rel="javascript"></script>
 </head>
-
 <body>
 	<div id="wrapper">
 		<div id="btn_group"> <!-- button group for selecting various features -->
-			<button type="button" class="btn" onclick="selectSize()">Change Grid Size</button>
-			<button type="button" class="btn" onclick="pen()">Pen</button>
+			<button type="button" id="selectSize" onclick="selectSize()">Change Grid Size</button>
+			<button type="button" id="pen" onclick="pen()">Pen</button>
 			<button type="button" class="btn" onclick="crayon()">Cosmic Crayon</button>
 			<button type="button" class="btn" onclick="eraser()">Eraser</button>
 			<button type="button" class="btn" onclick="clear_grid()">Clear</button>
@@ -20,5 +17,7 @@
 			<!-- jQuery generated divs for sketchpad container go here -->
 		</div>
 	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="sketchpad.js" rel="javascript"></script>
 </body>
 </html>
